@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace prueba.Model
 {
-    public enum CondicionPago {
+    enum CondicionPago {
         PAGO,
         PENDIENTE,
     }
@@ -21,7 +21,7 @@ namespace prueba.Model
             this.fecha = fecha;
             this.intervencion_efectuada = intervencion_efectuada;
             this.medico = medico;
-            this.condicion_pago = CondicionPago.PENDIENTE;
+            this.condicion_pago = condicion_pago;
         }
     }
 }

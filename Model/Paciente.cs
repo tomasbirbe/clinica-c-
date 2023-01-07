@@ -13,9 +13,9 @@ namespace prueba.Model
         public string apellido { get; set; }
         public string obra_social { get; set; }
         public float porcentaje_cobertura { get; set; }
-        public TipoIntervencion[] intervenciones { get; set; }
+        public Intervencion[] intervenciones { get; set; }
 
-        public Paciente(string dni, string nombre, string apellido, string obra_social, float porcentaje_cobertura, TipoIntervencion[] intervenciones) {
+        public Paciente(string dni, string nombre, string apellido, string obra_social, float porcentaje_cobertura, Intervencion[] intervenciones) {
             this.dni = dni;
             this.nombre = nombre;
             this.apellido = apellido;
