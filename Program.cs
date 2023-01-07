@@ -1,2 +1,5 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using prueba.Model;
+
+Medico m1 = new Medico("tomas", "birbe", "12341234", "it", false);
+
+Console.WriteLine(m1);
