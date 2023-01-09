@@ -8,14 +8,14 @@ namespace prueba.Model
 {
     internal class Paciente
     {
-        public string dni { get; set; }
+        public int dni { get; set; }
         public string nombre { get; set; }
         public string apellido { get; set; }
         public string obra_social { get; set; }
         public float porcentaje_cobertura { get; set; }
         public Intervencion[] intervenciones { get; set; }
 
-        public Paciente(string dni, string nombre, string apellido, string obra_social, float porcentaje_cobertura, Intervencion[] intervenciones) {
+        public Paciente(int dni, string nombre, string apellido, string obra_social, float porcentaje_cobertura, Intervencion[] intervenciones) {
             this.dni = dni;
             this.nombre = nombre;
             this.apellido = apellido;

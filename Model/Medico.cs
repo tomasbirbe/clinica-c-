@@ -10,11 +10,11 @@ namespace prueba.Model {
     {
         public string nombre { get; set; }
         public string apellido { get; set; }
-        public string matricula {get; set; }
+        public int matricula {get; set; }
         public string especialidad { get; set; }
         public bool esta_disponible { get; set; }
 
-        public Medico(string nombre, string apellido, string matricula, string especialidad, bool esta_disponible) {
+        public Medico(string nombre, string apellido, int matricula, string especialidad, bool esta_disponible) {
             this.nombre = nombre;
             this.apellido = apellido;
             this.matricula = matricula;

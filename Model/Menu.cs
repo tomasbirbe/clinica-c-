@@ -8,37 +8,6 @@ namespace prueba.Model {
     internal static class Menu {
         private static int respuesta { get; set; }
 
-        public static string Ask(string parameter) {
-            Console.WriteLine($"{parameter}");
-            Console.Write("> ");
-
-            return Console.ReadLine();
-        }
-
-        public static void RegistrarIntervencion() {
-            Console.WriteLine("Escriba los siguientes datos del paciente");
-            Console.Write('\n');
-            string dni = Ask("DNI");
-            string nombre = Ask("Nombre");
-            string apellido = Ask("Apellido");
-            float porcentaje_cobertura = 0;
-            do {
-                try {
-                    porcentaje_cobertura = float.Parse(Ask("Porcentaje de cobertura").Replace('.', ','));
-                    if(porcentaje_cobertura < 0 || porcentaje_cobertura > 100) {
-                        Console.WriteLine("Ingresa un numero entre 0 y 100");
-                    }
-
-                }
-                catch(Exception ex) {
-                    if(ex is FormatException) {
-                        Console.WriteLine("Ingresa un valor valido (Numerico)");
-                    }
-                }
-
-            } while(porcentaje_cobertura > 100 || porcentaje_cobertura < 0);
-
-        }
         public static void MostrarMenuPrincipal() {
             do {
                 Console.WriteLine("1- Registrar intervencion");
@@ -49,7 +18,7 @@ namespace prueba.Model {
 
                     switch(respuesta) {
                         case 1: {
-                                RegistrarIntervencion();
+                                Clinica.RegistrarIntervencion();
                                 break;
                             }
                     }
