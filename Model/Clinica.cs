@@ -10,24 +10,28 @@ namespace prueba.Model {
         static public List<Medico> medicos;
         static public List<Paciente> pacientes;
         static public List<Intervencion> intervenciones;
-
+        
         internal static void RegistrarIntervencion() {
             Console.WriteLine("Escriba los siguientes datos del paciente");
             Console.Write('\n');
-            int codigo_tipo_intervencion = Convert.ToInt32(Utils.Ask("Codigo de intervencion"));
-            Console.WriteLine(null == tipo_intervenciones.Find((tipo_intervencion) => tipo_intervencion.codigo == codigo_tipo_intervencion));
+            int matricula_medico;
+            int dni_paciente;
 
-            //Console.WriteLine(tipo_intervenciones.Find((tipo_intervencion) => tipo_intervencion.codigo == codigo_tipo_intervencion));
+            TipoIntervencion? tipo_intervencion = null;
 
-
-            //int matricula_medico = Convert.ToInt32(Utils.Ask("Matricula del medico"));
-            //Medico? medico = medicos.Find((medico) => medico.matricula == matricula_medico);
-            //if(medico == null) throw new Exception("No existe ese medico");
-            
-            //int dni_paciente = Convert.ToInt32(Utils.Ask("DNI del paciente"));
-            //Paciente ?paciente = pacientes.Find((paciente) => paciente.dni == dni_paciente);
-            //if(paciente == null) throw new Exception("No existe ese paciente");
-
+            do {
+                try {
+                    int codigo_tipo_intervencion = Convert.ToInt32(Utils.Ask("Codigo de interencion"));
+                    if (codigo_tipo_intervencion == 0) break;
+                    tipo_intervencion = tipo_intervenciones
+                        .Find((tipo_intervencion) => tipo_intervencion.codigo == codigo_tipo_intervencion)
+                        ?? throw new Exception("No existe esa intervencion"); 
+                } catch (FormatException) {
+                    Console.WriteLine("Ingresa un codigo valido");
+                } catch (Exception ex) {
+                    Console.WriteLine(ex.Message);
+                }
+            } while (tipo_intervencion == null);
         }
     }
 }

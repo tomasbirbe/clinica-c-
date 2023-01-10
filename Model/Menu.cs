@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace prueba.Model {
     internal static class Menu {
-        private static int respuesta { get; set; }
+        private static int input { get; set; }
 
         public static void MostrarMenuPrincipal() {
             do {
                 Console.WriteLine("1- Registrar intervencion");
                 Console.WriteLine("2- Obtener la deuda total de un paciente");
                 try {
-                    respuesta = int.Parse(Console.ReadLine());
+                    input = int.Parse(Console.ReadLine());
                     Console.Clear();
 
-                    switch(respuesta) {
+                    switch(input) {
                         case 1: {
                                 Clinica.RegistrarIntervencion();
                                 break;
@@ -25,12 +25,12 @@ namespace prueba.Model {
                 }
                 catch(Exception ex) {
                     if(ex is FormatException) {
-                        respuesta = 99;
+                        input = 99;
                         Console.Clear();
                         Console.WriteLine("Por favor, Ingresa un numero \n");
                     }
                 }
-            } while(respuesta != 0);
+            } while(input != 0);
             Console.Clear();
             Console.WriteLine("Adios!");
         }
